@@ -2,9 +2,10 @@
   "name": "tdd_in_nodejs-express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 10000 --exit",
+    "dev": "nodemon ./app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/MerlyneIradukunda/Tdd_in_Nodejs-Express/issues"
   },
-  "homepage": "https://github.com/MerlyneIradukunda/Tdd_in_Nodejs-Express#readme"
+  "homepage": "https://github.com/MerlyneIradukunda/Tdd_in_Nodejs-Express#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.4",
+    "mongoose": "^6.1.7",
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
+    "supertest": "^6.2.2"
+  }
 }
