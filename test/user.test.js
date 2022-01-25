@@ -3,12 +3,13 @@ const request = require("supertest");
 const expect = require("chai").expect;
 const app = require("../app");
 
-describe("/api/home", () => {
+
+describe("/api/users", () => {
   
   beforeEach(async () => {
     await User.deleteMany({});
   });
-
+ 
   describe("GET /", () => {
     it("should return all users", async () => {
       const users = [
@@ -16,10 +17,11 @@ describe("/api/home", () => {
         { name: "test1", email: "test1@gmail.com", gender: "female" }
       ];
       await User.insertMany(users);
-      console.log(users);
-      const res = await request(app).get("/");
+      // console.log(users);
+      const res = await request(app).get("/api/users");
       expect(res.status).to.equal(200);
       expect(res.body.length).to.equal(2);
+     
     });
   });
 });
