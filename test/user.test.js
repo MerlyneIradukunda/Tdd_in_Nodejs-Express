@@ -11,6 +11,11 @@ describe("/api/users", () => {
   });
  
   describe("GET /", () => {
+    it("should return none",async()=>{
+      const res = await request(app).get("/api/users");
+      expect(res.status).to.equal(200);
+      expect(res.body.length).to.equal(0);
+    });
     it("should return all users", async () => {
       const users = [
         { name: "test", email: "test@gmail.com", gender: "male" },
